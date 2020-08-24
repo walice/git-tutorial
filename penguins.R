@@ -49,5 +49,3 @@ ggsave(here("Figures", "Bill-features.png"),
 ## ## ## ## ## ## ## ## ## ## ##
 # ADD YOUR OWN CODE BELOW   ####
 ## ## ## ## ## ## ## ## ## ## ##
-
-Make a mistake here.
