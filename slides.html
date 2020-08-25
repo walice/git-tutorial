@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>GitHub Tutorial</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Alice Lépissier" />
+    <meta name="date" content="2020-08-24" />
+    <script src="https://use.fontawesome.com/5235085b15.js"></script>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+class: title-slide-custom, title-slide, middle
+background-color: #557571
+
+&lt;div&gt;
+&lt;img class="circle" style="position: absolute; top: 50px;right: 50px;" src="https://octodex.github.com/images/nyantocat.gif" width="150px"&gt;
+&lt;/div&gt;
+
+# GitHub Tutorial
+
+### 5 MINUTE GIT
+
+&lt;br&gt;&lt;br&gt;
+.h4[Alice Lépissier]
+
+.h4[&lt;a href="https://github.com/walice/git-tutorial"&gt;&lt;i class="fa fa-github fa-fw"&gt;&lt;/i&gt;&amp;nbsp; https://github.com/walice/git-tutorial&lt;/a&gt;]
+
+&lt;br&gt;&lt;br&gt;
+.h4[24 August 2020]
+
+
+
+---
+# Do you dread using Git?
+
+&lt;div&gt;
+  &lt;video width="100%" height="90%" controls muted&gt;
+  &lt;source src="assets/back-to-skool.mp4" type="video/mp4"&gt;
+  &lt;/video&gt;
+&lt;/div&gt;
+
+
+
+---
+# This tutorial is for you
+
+&lt;br&gt;
+
+.pull-left[
+.h4[If you want to get started with Git **now**.]
+
+Here, we will focus on the tools you _actually_ need to start working collaboratively and putting your work under version control.
+
+Git is extremely powerful and there are myriad sophisticated things you can do with it. As a result, the [&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#d49a89;" viewBox="0 0 448 512"&gt;&lt;path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"/&gt;&lt;/svg&gt; documentation](https://git-scm.com/book/en/v2) is very thorough, but can often be overwhelming 🤯 if you are just starting.
+]
+
+.pull-right[
+&lt;img src="https://octodex.github.com/images/Professortocat_v2.png"&gt;
+]
+
+
+
+---
+# Why you should use Git
+
+.h4[To be kind to yourself]
+
+.h4[To be kind to your collaborators]
+
+.h4[To ensure your work is reproducible]
+
+&lt;br&gt;
+
+--
+### Spillover benefits
+
+👩‍🔬 📏 It imposes a certain discipline to your programming.
+
+🤓 🔥 You can be braver when you code: if your new feature breaks, you can revert back to a version that worked!
+
+
+
+---
+# Demystifying Git
+
+**Git** is the software that allows us to do version control. 
+
+**GitHub Desktop** provides a user-friendly interface to use Git.
+
+You can host **remote** repositories on https://github.com/. You edit and work on your content in your **local** repository on your computer, and then you send your changes to the remote.
+
+You can interact with Git using the **Graphical User Interface (GUI)** provided by GitHub Desktop, or through the **Command Line Interface (CLI)**. 
+
+.h4[You can accomplish the essential steps using the GUI.]
+
+.h4[Hence "5 minute Git".] 
+
+Once you start doing more complex operations, you will need the CLI.
+
+
+
+---
+background-image: url(assets/remote-local.png)
+background-size: contain
+
+
+
+---
+# Installation (GUI)
+
+Install GitHub Desktop from &lt;https://desktop.github.com/&gt;.
+
+&lt;div style="width: 100%;"&gt;
+  &lt;img src="https://repository-images.githubusercontent.com/58559694/aeae5400-6102-11e9-980d-dc74185ed41d" width="100%"&gt;
+&lt;/div&gt;
+
+
+
+---
+# Installation (CLI)
+
+&lt;br&gt;&lt;br&gt;
+
+.pull-left[
+&lt;br&gt;
+GitHub Desktop allows you to use Git through the Windows command prompt.
+
+But we are going to install **Git Bash** which is a more useful shell.
+
+Intall Git Bash from https://gitforwindows.org/.
+]
+
+.pull-right[
+&lt;div class="card"&gt;
+	&lt;img src="https://gitforwindows.org/img/gwindows_logo.png" alt="Card Back"&gt;
+    &lt;img src="https://gitforwindows.org/img/git_logo.png" class="img-top" alt="Card Front"&gt;
+&lt;/div&gt;
+]
+
+
+
+---
+class: inverse, middle, center
+
+# Using GitHub Desktop
+### (5 minute Git)
+
+
+
+---
+# The basic workflow 
+
+### First time
+1. **Clone** the repository that you want to work on from GitHub onto your local machine
+
+2. Work on the files/scripts, e.g., `penguins.R`
+
+3. Next, you will **commit** your changes and include an informative message, e.g. "Plot distribution of flipper length"
+
+4. Then, you will **push** your changes to the remote repository
+
+### Subsequent times
+1. **Pull** any changes from the remote repository that your collaborators might have made
+
+2. Repeat steps 2-4 above
+
+
+
+---
+# Cloning
+
+&lt;div&gt;
+  &lt;video width="100%" height="90%" controls muted&gt;
+  &lt;source src="assets/cloning.mp4" type="video/mp4"&gt;
+  &lt;/video&gt;
+&lt;/div&gt;
+
+
+
+---
+# Exercise script in this repo
+
+The repo [walice/git-tutorial](https://github.com/walice/git-tutorial) contains the `penguins.R` script, which works with data from the `palmerpenguins` library.
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="assets/meet-the-penguins.png" alt="Artwork by @allison_horst." width="80%" /&gt;
+&lt;p class="caption"&gt;Artwork by @allison_horst.&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+---
+# Work on the files
+
+
+
+
+```r
+ggplot(penguins, 
+       aes(x = bill_length_mm, y = bill_depth_mm, color = species)) + 
+  geom_point() +
+  labs(title = "Penguin bills")
+```
+
+&lt;img src="slides_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+# Staging your files
+
+![Stage your file](assets/staged-file.png)
+
+
+
+---
+# Commit your changes
+
+&lt;div&gt;
+  &lt;video width="100%" height="90%" controls muted&gt;
+  &lt;source src="assets/committing.mp4" type="video/mp4"&gt;
+  &lt;/video&gt;
+&lt;/div&gt;
+
+
+
+---
+# Commit your changes
+
+.h4[Use an informative commit message]
+  - (Not great) "Analyze data" 😞
+  - (Better) "Estimate logistic regression" 🎉
+
+.h4[Have a consistent style]
+  - Start with an action verb
+  - Capitalize message
+
+.h4[Commits are _cheap_, use them often!]
+
+
+
+---
+# Push your changes
+
+&lt;div&gt;
+  &lt;video width="100%" height="90%" controls muted&gt;
+  &lt;source src="assets/pushing.mp4" type="video/mp4"&gt;
+  &lt;/video&gt;
+&lt;/div&gt;
+
+
+
+---
+class: inverse, middle, center
+
+# Using the command line
+### (5 minute Git)
+
+
+
+---
+# 5 minute Git
+
+.h4[Clone the repo]
+```bash
+git clone https://github.com/walice/git-tutorial.git
+```
+
+.h4[Work on `penguins.R`]
+
+.h4[Stage your files]
+```bash
+git add .
+```
+
+.h4[Commit your changes]
+```bash
+git commit -m "Add example code"
+```
+
+.h4[Push your changes]
+```bash
+git push
+```
+
+
+
+---
+class: inverse, middle, center
+
+# More command line tips
+
+
+
+---
+# Tell Git who you are
+
+.h4[As a first-time set up, you need to tell Git who you are.]
+
+
+```bash
+git config --global user.name "Your name"
+git config --global user.email ilovepenguins@example.com
+```
+
+
+
+---
+# git status
+
+.h4[Use this to check at what stage of the workflow you are at.]
+
+_This happens when you have modified the script, but haven't staged your changes yet._
+
+
+```bash
+git status
+```
+
+
+```bash
+*Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+*        modified:   penguins.R
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+
+
+---
+# git status
+
+_After you stage the `penguins.R` file, but before you commit the changes._
+
+
+```bash
+git add penguins.R
+git status
+```
+
+
+```bash
+*Changes to be committed:
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
+
+        modified:   penguins.R
+```
+
+
+.h4[When your local repository is in sync with the remote.]
+
+
+```bash
+git status
+```
+
+
+```bash
+On branch master
+Your branch is up to date with 'origin/master'.
+
+*nothing to commit, working tree clean
+```
+
+
+
+---
+# git pull
+
+Your collaborators have been adding some awesome content to the repository, and you want to fetch their changes from the remote and update your local repository.
+
+.h4[Use this to fetch changes from the remote and to merge them in to your local repository.]
+
+```bash
+git pull
+```
+What this is doing under-the-hood is running a `git fetch` and then `git merge`.
+
+
+
+---
+# Adding and ignoring files
+
+To stage specific files in your repository, you can name them directly
+
+```bash
+git add penguins.R other-script.R
+```
+or you can add all of them at once
+
+```bash
+git add .
+```
+
+You might want to _not_ track certain files in your local repository, e.g., sensitive files such as credentials. But it might get tedious to type out each file that you _do_ want to include by name.
+
+.h4[Use a .gitignore file to specify files to always ignore.]
+
+Create a file called `.gitignore` and place it in your repo. The content of the file should include the names of the files that you want Git to **not track**.
+
+
+
+---
+# git log
+
+.h4[Use this to look at the history of your repository.]
+
+Each commit has a specific **hash** that identifies it.
+
+```bash
+git log
+```
+
+
+```bash
+*commit af58f79bfa4301643025dd6c8767e65349cf407a
+Author: Name &lt;Email address&gt;
+Date:   DD-MM-YYYY
+
+    Add penguin script
+```
+
+You can also find this on GitHub, by going to [github.com/user-name/repo-name/commits](https://github.com/walice/git-tutorial/commits).
+
+.h4[You can go back in time to a specific commit, if you know its reference.]
+
+
+
+---
+# Undoing mistakes
+
+Imagine you did some work, **committed** the changes, and **pushed** them to the remote repo. But you'd like to undo those changes.
+
+.h4[Running `git revert` is a "soft undo".]
+
+Say you added some plain text by mistake to `penguins.R`. Running `git revert` will do the opposite of what you just did (i.e., remove the plain text) and create a new commit. You can then `git push` this to the remote.
+
+
+```bash
+git revert &lt;hash-of-the-commit-you-want-to-undo&gt;
+git push
+```
+
+
+
+---
+# Undoing mistakes
+
+`git revert` is the safest option to use.
+
+.h4[It will preserve the history of your commits.]
+
+
+```bash
+git log
+```
+
+
+```bash
+commit 6634a076212fb7bac16f9525feae1e83e0f200ca
+Author: Name &lt;Email address&gt;
+Date:   DD-MM-YYYY
+
+*    Revert "Add plain text to code by mistake"
+
+*    This reverts commit a8cf7c2592273ef6a28920222a92847794275868.
+
+commit a8cf7c2592273ef6a28920222a92847794275868
+Author: Name &lt;Email address&gt;
+Date:   DD-MM-YYYY
+
+    Add plain text to code by mistake
+```
+
+
+
+---
+# Rewriting history
+
+You can **change the contents of the repo** to look like it did at a _specific point in time_, by specifying the reference of the commit you want to go back to.
+
+For example, we can rewind history to before we added the plain text by mistake and had to revert it, using `git reset` to the point just before that. This will delete the history of any commits that happened after that point.
+
+.h4[This will rewrite history. This is (generally) bad.]
+
+After you `git reset`, you need to **force** your changes on the repo (this is what the `-f` flag means).
+
+
+```bash
+git reset --hard &lt;hash-of-the-commit-you-want-to-go-back-to&gt;
+git push -f
+```
+
+
+
+---
+class: inverse, middle, center
+
+# Other resources
+
+
+
+---
+# Other Git resources
+
+### http://swcarpentry.github.io/git-novice/
+### https://github.github.com/training-kit/downloads/github-git-cheat-sheet/
+### https://learngitbranching.js.org/
+&lt;!-- ### https://happygitwithr.com/ --&gt;
+&lt;!-- ### https://ndpsoftware.com/git-cheatsheet.html --&gt;
+
+
+
+---
+class: middle, center
+background-color: #557571
+
+## .white[Links]
+
+.h4[.accent[&lt;i class="fa fa-github fa-fw"&gt;&lt;/i&gt;]&lt;a href="https://github.com/walice/git-tutorial"&gt;.accent[&amp;nbsp; walice/git-tutorial]&lt;/a&gt;]&lt;br&gt;
+.h4[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:#d49a89;" viewBox="0 0 576 512"&gt;&lt;path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z"/&gt;&lt;/svg&gt;&lt;a href="https://alicelepissier.com/git-tutorial/slides.html"&gt;.accent[&amp;nbsp; Slides]&lt;/a&gt;]&lt;br&gt;
+.h4[.accent[&lt;i class="fa fa-envelope"&gt;&lt;/i&gt;]&lt;a href="mailto:alice.lepissier@gmail.com"&gt;.accent[&amp;nbsp;&amp;nbsp;alice.lepissier@gmail.com]&lt;/a&gt;]
+
+&lt;br&gt;
+
+## .white[Dataset reference]
+
+&lt;div style="display:flex; align-items:center;"&gt;
+  &lt;img src="https://allisonhorst.github.io/palmerpenguins/reference/figures/palmerpenguins.png" width="15%"/&gt;&lt;span&gt;.white[Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0.]&lt;br&gt;&lt;a href="https://allisonhorst.github.io/palmerpenguins/" style="color:#d49a89;"&gt;https://allisonhorst.github.io/palmerpenguins/&lt;/a&gt;&lt;br&gt;.white[doi: 10.5281/zenodo.3960218]&lt;/span&gt;
+&lt;/div&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<script type='text/javascript'>
+
+var slideElements
+
+  function getElementForSlide(slide) {
+    slideElements = slideElements || document.querySelectorAll('.remark-slide')
+    return slideElements[slide.getSlideIndex()]
+  }
+
+  slideshow.on('showSlide', function (slide) {
+    Array.from(getElementForSlide(slide).querySelectorAll('video, audio')).forEach(function (vid) {
+      vid.loop = false
+      vid.currentTime = 0
+      vid.play()
+    })
+  })
+
+  slideshow.on('hideSlide', function (slide) {
+    Array.from(getElementForSlide(slide).querySelectorAll('video, audio')).forEach(function (vid) {
+      vid.pause()
+    })
+  })
+
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
