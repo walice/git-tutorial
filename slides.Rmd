@@ -344,7 +344,7 @@ class: inverse, middle, center
 
 ```{bash, eval=FALSE}
 git config --global user.name "Your name"
-git config --global user.email ilovepenguins@example.com
+git config --global user.email "ilovepenguins@example.com"
 ```
 
 
@@ -553,8 +553,8 @@ background-color: #557571
 
 ## .white[Links]
 
-.h4[.accent[<i class="fa fa-github fa-fw"></i>]<a href="https://github.com/walice/git-tutorial">.accent[&nbsp; walice/git-tutorial]</a>]<br>
 .h4[`r fa("book-open", fill = "#d49a89")`<a href="https://alicelepissier.com/git-tutorial/slides.html">.accent[&nbsp; Slides]</a>]<br>
+.h4[.accent[<i class="fa fa-github fa-fw"></i>]<a href="https://github.com/walice/git-tutorial">.accent[&nbsp; walice/git-tutorial]</a>]<br>
 .h4[.accent[<i class="fa fa-envelope"></i>]<a href="mailto:alice.lepissier@gmail.com">.accent[&nbsp;&nbsp;alice.lepissier@gmail.com]</a>]
 
 <br>
